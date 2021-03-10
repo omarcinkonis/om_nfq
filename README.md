@@ -38,12 +38,12 @@ No. | Requirement | Status | Comment
 -|-|-|-
 1 | _Make information on the status page to automatically update every 10 seconds._ | Complete | Implemented with AJAX. Information can also be updated with a button. Automatic refresh when a student is assigned to a group. Refresh is delayed until user finishes selection.
 2 | _Implement functional requirement #2 using RESTful API._ | Complete | -
-3 | _Add automated test for functional requirement #4._ | Complete | Implemented with PHPUnit 9. Once PHPUnit is installed, open terminal, go to the project directory and launch the test by typing "vendor/bin/phpunit" (no quotes).
+3 | _Add automated test for functional requirement #4._ | Complete | Implemented with PHPUnit 9. Once PHPUnit is set up, open terminal, go to the project directory and launch the test by typing "vendor/bin/phpunit" (no quotes).
 
 &nbsp;
 ## My own extras
 1. Client and server side data validation. The user may not input project or student names that exceed 255 characters. Number of groups, students per group expected to range from 2 to 100.
-2. Data cleanup - HTML tags and special characters are stripped, therefore the user may not manipulate the page in an unwanted way (for example, it is impossible to use an HTML bold tag for the project / student name).
+2. Data cleanup - HTML tags and special characters are stripped, therefore the user may not manipulate the page in an unwanted way (for example, it is impossible to use an HTML bold tag for project / student names).
 3. Database is accessed with prepares for improved security.
 
 &nbsp;
