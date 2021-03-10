@@ -301,8 +301,9 @@ class Process
                             if ($row['g_number'] == $i + 1) : // check if participant belongs to the group that is currently being displayed 
                                 echo ('<span class="truncate" title="' . $row['s_name'] . '">' . $row['s_name'] . '</span>'); // echo student name if their group number matches current group number
                                 $row = $inGroups->fetch(); // fetch the next student assigned to a group
-                            else : ?>
-                                <select onclick="deselect(<?= ++$selectNo ?>)">
+                            else : 
+                                // this onchange attribute enables onclick functionality for option elements in Chrome and IE ?>
+                                <select onchange="this.options[this.selectedIndex].onclick()" onclick="deselect(<?= ++$selectNo ?>)">
                                     <option onclick="refresh()">Select student</option>
 
                                 <?php
@@ -361,7 +362,7 @@ class Process
                 </td>
                 <td><a href="http://localhost/om_nfq-master/models/Process.php?s_name=<?= $row['s_name']; ?>&p_id=<?= $project->p_id; ?>&deleteStudent=1">Delete</a></td>
             </tr>
-        <?php
+<?php
         endwhile;
         echo '</table>';
     }
